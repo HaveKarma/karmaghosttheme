@@ -1,0 +1,248 @@
+/******************************************************************
+Site Name: havekarma.com
+Author: Karma Labs, Inc.
+
+Stylesheet: Mixins & Constants Stylesheet
+Version: 1.0.0
+
+******************************************************************/
+
+///////////////// Variables /////////////////
+
+// z-index settings
+//  alerts, modals, overlays
+$z10: 	1000;
+$z10a: 	975;
+$z10b: 	950;
+$z10c: 	925;
+// Header, footer,
+$z9: 	900;
+$z9a: 	875;
+$z9b: 	850;
+$z9c: 	825;
+//
+$z8: 		800;
+$z8a: 	775;
+$z8b: 	750;
+$z8c: 	725;
+//
+$z7: 	700;
+$z7a: 	675;
+$z7b: 	650;
+$z7c: 	625;
+// #content-container
+$z6: 	600;
+$z6a: 	590;
+$z6b: 	580;
+$z6c: 	570;
+$z6d: 	560;
+$z6e: 	550;
+$z6f: 	540;
+$z6g: 	530;
+//
+$z5: 	500;
+$z5a: 	475;
+$z5b: 	450;
+$z5c: 	425;
+//
+$z4: 	400;
+$z4a: 	375;
+$z4b: 	350;
+$z4c: 	325;
+//
+$z3: 	300;
+$z3a: 	275;
+$z3b: 	250;
+$z3c: 	225;
+//
+$z2: 	200;
+$z2a: 	175;
+$z2b: 	150;
+$z2c: 	125;
+//
+$z1: 		100;
+$z1a: 	75;
+$z1b: 	50;
+$z1c: 	25;
+
+$zz: 	0;
+
+$zn1:	 -1;
+
+// Set box-sizing -- border-box or content-box
+$box-sizing: border-box;
+
+$border-radius: 2;
+
+$heading-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+
+
+///////////////// Mixin Classes /////////////////
+
+
+// CSS3 Transitions -- Usage: @include transition(all 0.2s ease-in-out);
+@mixin transition($transition...) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit",  "-moz", "-ms", "-o");
+	//
+	@each $prefix in $prefixes {
+    	#{$prefix}-transition: $transition;
+	}
+	//
+	transition: $transition;
+}
+
+// CSS3 Transition Delay -- Usage: @include delay(300ms);
+@mixin delay($delay) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit",  "-moz", "-ms", "-o");
+	//
+	@each $prefix in $prefixes {
+    	#{$prefix}-transition-delay: $delay;
+	}
+	//
+	transition-delay: $delay;
+}
+
+// CSS3 Boxshadow -- Usage: @include boxshadow(1px 1px 4px rgba(0,0,0,.25));
+@mixin boxshadow($box-shadow...) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit",  "-moz", "-ms", "-o");
+	//
+	@each $prefix in $prefixes {
+    	#{$prefix}-box-shadow: $box-shadow;
+	}
+	//
+	box-shadow: $box-shadow;
+}
+
+
+// CSS3 Gradients -- Usage: @include css-gradient(#dfdfdf,#f8f8f8);
+@mixin css-gradient($from: #fff, $to: #eee) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+// CSS3 Border Radius Usage: @include round-corners(2);
+@mixin round-corners($radius) {
+	$prefixes:      ("-webkit",  "-moz", "-ms", "-o");
+	//
+	@each $prefix in $prefixes {
+    	//#{$prefix}-border-radius: $radius+px;
+	}
+	//border-radius: $radius+px;
+}
+
+@mixin round-corners-percent($radius) {
+	$prefixes:      ("-webkit",  "-moz", "-ms", "-o");
+	//
+	@each $prefix in $prefixes {
+    	//#{$prefix}-border-radius: $radius+%;
+	}
+	//border-radius: $radius+%;
+}
+
+@mixin round-corners-full($radius1, $radius2, $radius3, $radius4) {
+	$prefixes:      ("-webkit",  "-moz", "-ms", "-o");
+	//
+	@each $prefix in $prefixes {
+    	#{$prefix}-border-radius: $radius1+px $radius2+px $radius3+px $radius4+px;
+	}
+
+	border-radius: $radius1+px $radius2+px $radius3+px $radius4+px;
+}
+
+// CSS3 Vertical Align Usage: @include vertical-align;
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	margin: 0 auto;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+// generic transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// rotate  Usage: @include rotate(45);
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin($origin) {
+    -moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+@mixin color-opacity ($color, $opacity) {
+
+}
+
+///////////////// Extend Classes /////////////////
+
+// Usage: @extend %basic-block;
+%basic-block {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	overflow: visible;
+	word-spacing: 0;
+}
+
+// Usage: @extend %pod-shadow;
+%pod-shadow {
+	@include boxshadow(0 1px 4px 1px rgba(0,0,0,.15));
+}
+
+%pod-bg {
+	background: $karma-white;
+	background: rgba($karma-white, .95);
+}
+
+%inline-block {
+	display: inline-block !important;
+	font-size: 1.6rem;
+	white-space: normal;
+	word-spacing: 0;
+}
+
+%inline-parent {
+	word-spacing: -1px;
+	font-size: 0;
+}
+
+%boxed-content {
+	background: darken($karma-white, 1.4%);
+	border: 1px solid darken($karma-grey1, 4%);
+	@include round-corners($border-radius);
+	padding: 16px 26px;
+}

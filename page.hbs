@@ -1,14 +1,14 @@
-{{!< default}}
+{{!< default
+}}
 
 <header class="site-header">
+    <div class="logo-holder">
+        <a class="site-logo" title="{{@blog.title}}" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+    </div>
+    <!-- Logo -->
     <div class="container">
         {{navigation}}
-        
-        {{#if @blog.logo}}
-            <a class="site-logo" title="{{@blog.title}}" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-        {{else}}
-            <h1 class="site-title"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
-        {{/if}}
+        <h1 class="site-title"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
     </div>
 </header>
 
@@ -16,6 +16,13 @@
     <div class="container clearfix">
         {{#post}}
             <article class="{{post_class}}">
+                <div class="stripes c100 sit-top">
+                    <div class="stripe bg-karma-blue"></div>
+                    <div class="stripe bg-karma-green"></div>
+                    <div class="stripe bg-karma-yellow"></div>
+                    <div class="stripe bg-karma-orange"></div>
+                </div>
+                <!-- End Stripes -->
                 <header class="post-header">
                     <h1 class="post-title">{{title}}</h1>
                 </header>

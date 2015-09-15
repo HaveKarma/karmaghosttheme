@@ -1,5 +1,12 @@
 {{#foreach posts}}
     <article class="{{post_class}} post-stub">
+        <div class="stripes c100 sit-top">
+            <div class="stripe bg-karma-blue"></div>
+            <div class="stripe bg-karma-green"></div>
+            <div class="stripe bg-karma-yellow"></div>
+            <div class="stripe bg-karma-orange"></div>
+        </div>
+        <!-- End Stripes -->
         <div class="post-feature">
             <a href="{{url}}">
                 {{#if image}}
@@ -18,18 +25,21 @@
             </div>
 
             <h1 class="post-stub-title"><a href="{{url}}">{{title}}</a></h1>
-        </header>
+            <div class="author-info">
 
+                <div class="author-name">
+                    {{author}} {{tags prefix=" on "}}
+                </div>
+
+            </div>
+        </header>
+<hr>
         <div class="post-content">
             <p>{{excerpt characters=230}}...</p>
         </div>
 
         <footer class="post-stub-footer">
-            {{#if tags}}
-                <p class="post-tags">{{tags}}</p>
-            {{/if}}
-
-            <a class="post-link" href="{{url}}">&#xf14c;</a>
+            <a class="post-link" href="{{url}}">Read the Post</a>
         </footer>
     </article>
 {{/foreach}}

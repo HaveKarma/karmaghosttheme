@@ -1,0 +1,336 @@
+/******************************************************************
+Site Name: havekarma.com
+Author: Karma Labs, Inc.
+
+Stylesheet: Karma Colors
+******************************************************************/
+
+
+/*********************
+COLORS
+*********************/
+
+$karma-blue:		rgb(0,188,219);			//#00bcdb
+$karma-bluer: 		rgb(0,154,180);			//#009ab4
+
+$karma-green:		rgb(42,184,148);		//#2ab894
+$karma-greener:		rgb(35,152,122);		//#23987a
+
+$karma-yellow:		rgb(255, 208, 0);		//#ffd000
+$karma-yellower:	rgb(230,193,0);			//#d8b000
+
+$karma-orange:		rgb(245,135,70);		//#f58746
+$karma-oranger:		rgb(243,111,33);		//#f36f21
+
+$karma-red: 		rgb(238,64,74);			//#ee404a
+$karma-reder: 		rgb(235,28,40);			//#eb1c28
+
+
+$karma-grey1:		rgb(240,240,240);		//#f0f0f0
+$karma-grey2:		rgb(201,201,201);		//#c9c9c9
+$karma-grey3:		rgb(162,162,162);		//#a2a2a2
+$karma-grey4:		rgb(122,122,122);		//#7a7a7a
+$karma-grey5:		rgb(83,83,83);			//#535353
+
+$karma-black:		rgb(26,26,26);			//#1a1a1a
+$karma-white:		rgb(254,254,254);		//#ffffff
+
+$karma-grey-green: 	rgb(122,193,175); 		//#7AC1AF
+
+$background-color:  $karma-white;
+$font-color:        $karma-grey5;
+
+$link-color:        $karma-blue;
+$link-hover:        $karma-bluer;
+
+$danger:            $karma-red;
+$danger-two:        $karma-reder;
+$warning:           $karma-orange;
+$warning-two:       $karma-oranger;
+$info:              $karma-blue;
+$info-two:          $karma-bluer;
+$success:           $karma-green;
+$success-two:       $karma-greener;
+$happy:             $karma-yellow;
+$happy-two:         $karma-yellower;
+
+
+/**
+*-----------------------------------------
+* Brand Colors
+*-----------------------------------------
+*/
+
+$airbnb-color: #ff5a5f;
+$craigslist-color: #82007f;
+$dogvacay-color: #63c2ce;
+$ebay-color: #86b817;
+$etsy-color: #d5641c;
+$facebook-color: #3b5998;
+$foursquare-color: #F94877;
+$google-color: #D50F25;
+$linkedin-color: #0976b4;
+$relayrides-color: #28bcdc;
+$rent-able-color: #00b354;
+$taskrabbit-color: #009648;
+$twitter-color: #55acee;
+$urbansitter-color: #6072a0;
+$vayable-color: #345160;
+
+.airbnb-icon {
+	background: $airbnb-color;
+}
+
+.craigslist-icon {
+	background: $craigslist-color;
+}
+
+.dogvacay-icon {
+	background: $dogvacay-color;
+}
+
+.ebay-icon {
+	background: $ebay-color;
+}
+
+.etsy-icon {
+	background: $etsy-color;
+}
+
+.facebook-icon {
+	background: $facebook-color;
+}
+
+.foursquare-icon {
+	background: $foursquare-color;
+}
+
+.linkedin-icon {
+	background: $linkedin-color;
+}
+
+.rent-able-icon {
+	background: $rent-able-color;
+}
+
+.relayrides-icon {
+	background: $relayrides-color;
+}
+
+.twitter-icon {
+	background: $twitter-color;
+}
+
+.vayable-icon {
+	background: $vayable-color;
+}
+
+
+// Font colors
+
+.karma-white {
+	color: $karma-white !important;
+}
+
+.karma-black {
+	color: $karma-black !important;
+}
+
+.karma-yellow {
+	color: $karma-yellow !important;
+}
+
+.karma-red {
+	color: $karma-red !important;
+}
+
+.karma-orange {
+	color: $karma-orange !important;
+}
+
+.karma-blue {
+	color: $karma-blue !important;
+}
+
+.karma-bluer {
+	color: $karma-bluer !important;
+}
+
+.karma-green {
+	color: $karma-green !important;
+}
+
+.karma-grey1 {
+	color: $karma-grey1 !important;
+}
+
+.karma-grey2 {
+	color: $karma-grey2 !important;
+}
+
+.karma-grey3 {
+	color: $karma-grey3 !important;
+}
+
+.karma-grey4 {
+	color: $karma-grey4 !important;
+}
+
+.karma-grey5 {
+	color: $karma-grey5 !important;
+}
+
+.danger {
+	color: $danger;
+}
+
+.danger-two {
+	color: $danger-two;
+}
+
+.warning {
+	color: $warning;
+}
+
+.warning-two {
+	color: $warning-two;
+}
+
+.info {
+	color: $info;
+}
+
+.info-two {
+	color: $info-two;
+}
+
+.success {
+	color: $success;
+}
+
+.success-two {
+	color: $success-two;
+}
+
+.happy {
+	color: $happy;
+}
+
+.happy-two {
+	color: $happy-two;
+}
+
+
+// Background Colors
+
+.bg-karma-white {
+	background-color: $karma-white;
+}
+
+.bg-karma-black {
+	background-color: $karma-black;
+}
+
+.bg-karma-yellow {
+	background-color: $karma-yellow;
+}
+
+.bg-karma-yellower {
+	background-color: $karma-yellower;
+}
+
+.bg-karma-red {
+	background-color: $karma-red;
+}
+
+.bg-karma-reder {
+	background-color: $karma-reder;
+}
+
+.bg-karma-orange {
+	background-color: $karma-orange;
+}
+
+.bg-karma-oranger {
+	background-color: $karma-oranger;
+}
+
+.bg-karma-blue {
+	background-color: $karma-blue;
+}
+
+.bg-karma-bluer {
+	background-color: $karma-bluer;
+}
+
+.bg-karma-green {
+	background-color: $karma-green;
+}
+
+.bg-karma-greener {
+	background-color: $karma-greener;
+}
+
+.bg-karma-grey1 {
+	background-color: $karma-grey1;
+}
+
+.bg-karma-grey2 {
+	background-color: $karma-grey2;
+}
+
+.bg-karma-grey3 {
+	background-color: $karma-grey3;
+}
+
+.bg-karma-grey4 {
+	background-color: $karma-grey4;
+}
+
+.bg-karma-grey5 {
+	background-color: $karma-grey5;
+}
+
+.bg-transparent {
+	background-color: transparent;
+}
+
+.bg-danger {
+	color: $danger;
+}
+
+.bg-danger-two {
+	color: $danger-two;
+}
+
+.bg-warning {
+	color: $warning;
+}
+
+.bg-warning-two {
+	color: $warning-two;
+}
+
+.bg-info {
+	color: $info;
+}
+
+.bg-info-two {
+	color: $info-two;
+}
+
+.bg-success {
+	color: $success;
+}
+
+.bg-success-two {
+	color: $success-two;
+}
+
+.bg-happy {
+	color: $happy;
+}
+
+.bg-happy-two {
+	color: $happy-two;
+}

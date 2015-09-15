@@ -1,0 +1,863 @@
+/******************************************************************
+Site Name: havekarma.com
+Author: Karma Labs, Inc.
+
+Stylesheet: Global Styles Stylesheet
+Version: 1.0.0
+
+******************************************************************/
+/*********************
+General Styles
+*********************/
+
+html {
+  font-size: 62.5%;
+  background: $background-color;
+  height: 100%;
+  -moz-box-sizing: $box-sizing;
+  box-sizing: $box-sizing;
+}
+
+body {
+  min-height: 100%;
+  font-family: $body-font;
+  font-size: 1.6rem;
+  line-height: $line-height;
+  letter-spacing: $letter-space;
+  color: $font-color;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-bottom: 160px;
+}
+/*
+********************
+Links
+********************
+*/
+a,
+a:visited,
+a:active,
+a:focus {
+  color: $link-color;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  @include transition(all 0.3s ease-out);
+  /* mobile tap color */
+  &:link {
+    -webkit-tap-highlight-color: rgba( 0, 0, 0, 0.3 );
+  }
+
+  &.grey1-link {
+    color: $karma-grey1;
+  }
+
+  &.grey2-link {
+    color: $karma-grey2;
+  }
+
+  &.grey3-link {
+    color: $karma-grey3;
+  }
+
+  &.grey4-link {
+    color: $karma-grey4;
+  }
+
+  &.red-link {
+    color: $karma-red;
+  }
+
+  &.yellow-link {
+    color: $karma-yellow;
+  }
+
+  &.orange-link {
+    color: $karma-orange;
+  }
+
+  &.green-link {
+    color: $karma-green;
+  }
+
+  &.white-link {
+    color: $karma-white;
+  }
+
+  &.black-link {
+    color: $karma-black;
+  }
+
+  &.blue-hover:hover {
+    color: $karma-blue;
+  }
+
+  &.white-hover:hover {
+    color: $karma-white;
+  }
+
+  &.white-hover:hover {
+    color: $karma-white;
+  }
+
+  &.grey1-hover:hover {
+    color: $karma-grey1;
+  }
+  /* on hover */
+  &:hover {
+    color: $link-hover;
+    text-decoration: none;
+  }
+  /* on click */
+  &:active {
+
+  }
+}
+
+address {
+  font-style: normal;
+}
+/*
+********************
+Buttons
+********************
+*/
+
+button,
+.button {
+  @extend %basic-block;
+  display: inline-block;
+  position: relative;
+  margin: 2px 6px;
+  border: none;
+  outline: none;
+  padding: 12px 36px;
+  font-size: 120%;
+  font-weight: 500;
+  color: $karma-white !important;
+  cursor: pointer;
+  @include round-corners($border-radius);
+  transform-style: flat;
+  @include transition(all 250ms ease);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: $z5a;
+    transition: all 250ms ease-out;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+
+    &:before,
+    &:after {
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      cursor: default;
+      top: 0;
+
+      &:before,
+      &:after {
+        box-shadow: none !important;
+      }
+    }
+  }
+
+
+}
+
+.fancy-button-flat {
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+
+    &:before {
+      @include boxshadow(0 15px 10px -10px rgba(31, 31, 31, 0.4));
+    }
+  }
+
+  &:active {
+    top: 1px;
+    &:before {
+      @include boxshadow(0 1px 2px -1px rgba(31, 31, 31, 0.3));
+    }
+  }
+
+  &.icon-button {
+    padding: 0 !important;
+    font-weight: 700;
+    background: $karma-yellow;
+
+    span {
+      display: inline-block;
+      height: 100%;
+      position: relative;
+      padding: 2px 10px 1px 8px;
+      vertical-align: middle;
+      font-size: 14px;
+      //letter-spacing: 1px;
+      color: $karma-white;
+      @include transition(all 400ms ease);
+      font-size: 1.4rem;
+
+      &.icn {
+        background: $karma-yellower;
+        //border-right: 1px solid $karma-bluer;
+        color: $karma-white;
+        font-size: 2.0rem;
+        padding-top: 4px;
+        overflow: hidden;
+        @include round-corners-full($border-radius, 0, 0, $border-radius);
+
+        img {
+          max-width: 30px;
+          padding-bottom: 3px;
+        }
+
+        svg {
+          max-width: 16px;
+          fill: $karma-white;
+          stroke: $karma-white;
+          stroke-width: 1px;
+          @include transition(all 0.5s ease-in-out);
+        }
+
+        i {
+          @include transition(all 400ms ease);
+          text-shadow: 0 1px 1px rgba(0,0,0,.15);
+        }
+      }
+    }
+
+    &:hover {
+      span.icn {
+
+        svg {
+          stroke-width: 50px;
+        }
+
+        i {
+          @include long-shadow(darken($karma-yellower, 4%));
+        }
+      }
+    }
+
+    &.active {
+      span.icn i {
+        @include long-shadow(darken($karma-yellower, 4%));
+      }
+    }
+  }
+}
+
+.fancy-button-hover {
+  box-shadow: none;
+
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include boxshadow(0 15px 10px -10px rgba(31, 31, 31, 0.4));
+  }
+
+  &:hover {
+    top: 1px;
+
+    &:before {
+      @include boxshadow(0 1px 4px rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  &:active,
+  &.off {
+    top: 2px;
+
+    &:before,
+    &:after {
+      @include boxshadow(0 0 0 0 rgba(31, 31, 31, 0));
+    }
+  }
+}
+
+.hollow-button {
+  background: transparent;
+  color: $karma-grey1;
+  border: 1px solid $karma-grey1;
+  text-shadow: none;
+  padding: 10px 18px;
+  font-size: 106%;
+
+  &:hover {
+    background: $karma-grey1;
+    color: $karma-grey4 !important;
+
+    &:before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include boxshadow(0 1px 4px rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  &:active {
+    top: 1px;
+  }
+
+
+}
+
+.medium-button {
+  padding: 8px 22px !important;
+  font-size: 100% !important;
+  font-weight: 500;
+}
+
+.small-btn {
+  padding: 5px 16px !important;
+  font-size: 86% !important;
+  font-weight: 500;
+}
+
+.icon-btn {
+  position: relative;
+  background: $karma-grey2;
+  padding: 0 0 0 !important;
+  font-weight: 700;
+  @include round-corners($border-radius);
+  border: 1px solid $karma-grey2;
+  color: #fff;
+  display: inline-block;
+  margin: 0 auto;
+  line-height: 0;
+  cursor: pointer;
+  @include transition(all 400ms ease);
+
+  span {
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    padding: 4px 10px;
+    vertical-align: middle;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: $karma-white;
+    @include transition(all 400ms ease);
+    font-size: 1.4rem;
+
+    &.icn {
+      background: $karma-white;
+      color: $karma-yellow;
+      font-size: 2.6rem;
+      overflow: hidden;
+      //@include round-corners-full($border-radius, 0, 0, $border-radius);
+
+      i {
+        @include transition(all 400ms ease);
+        text-shadow: 0 1px 1px rbba(0,0,0,.15);
+      }
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+    background: $karma-yellow;
+    color: #fff;
+    border-color: $karma-yellow;
+
+    span.icn {
+      color: $karma-yellow;
+
+      i {
+        @include long-shadow($karma-grey1);
+      }
+    }
+  }
+}
+////---- Icons
+
+.icn-circle,
+.icn-square {
+  @extend %basic-block;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  @extend %pod-shadow;
+}
+
+.icn-circle {
+  @include round-corners-percent(50);
+  font-size: 4.0rem;
+
+
+}
+
+.icn-square {
+  @include round-corners($border-radius);
+  line-height: 0 !important;
+  padding: 6px 8px;
+}
+
+.white-grad {
+  @include css-gradient($karma-white, $karma-grey1);
+}
+
+.blue-grad {
+  @include css-gradient($karma-blue, $karma-bluer);
+}
+
+.red-grad {
+  @include css-gradient($karma-red, $karma-reder);
+}
+
+.yellow-grad {
+  @include css-gradient($karma-yellow, $karma-yellower);
+}
+
+.green-grad {
+  @include css-gradient($karma-green, $karma-greener);
+}
+
+.black-grad {
+  @include css-gradient($karma-grey5, $karma-black);
+}
+
+.tooltip {
+  @include transform(translateY(-10px));
+  @include boxshadow(0 0 2px 0 rgba(0,0,0,.25), 0 1px 4px 1px rgba(0,0,0,.15));
+  @include round-corners($border-radius);
+  @include css-gradient($karma-white, $karma-grey1);
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  z-index: 10;
+  display: block;
+  visibility: hidden;
+  margin-left: -110px;
+  width: 220px;
+  height: 60px;
+  opacity: 0;
+  @include transition(all 0.5s ease-in-out);
+
+  p {
+    padding: 2px 12px 0;
+    text-align: left;
+    font-weight: 400;
+    line-height: 110%;
+    font-size: 1.4rem;
+  }
+
+  .tip-button {
+    height: 30px;
+    border-top: 1px solid $karma-grey1;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 4px 0 0;
+    @include transition(all 0.5s ease-in-out);
+
+    &.site-link {
+      border-top: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: $karma-grey1;
+    }
+  }
+
+  &:before {
+    @include transition(all 0.5s ease-in-out);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    display: block;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border: 8px solid $karma-grey1;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    background: transparent;
+    content: '';
+  }
+}
+/* Main Site Structure */
+
+#background-container {
+  @extend %basic-block;
+  position: fixed;
+  z-index: $z1c;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 1;
+  @include transition(opacity 1.5s ease-in-out);
+
+  &.no-photo {
+    opacity: 1;
+  }
+
+  &.loaded {
+    opacity: 1;
+  }
+
+  ul {
+
+    li {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: transparent;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      opacity: 1;
+      z-index: 0;
+
+      &.visible {
+        opacity: 1;
+      }
+
+      &.bg-one {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/splash-2.jpg");
+      }
+
+      &.legal {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/legal-bg.jpg");
+        opacity: 1;
+      }
+
+      &.extension {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/extension-bg.jpg");
+        opacity: 1;
+      }
+
+      &.contact {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/contact-bg.jpg");
+        opacity: 1;
+      }
+
+      &.faq {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/faq-bg.jpg");
+        opacity: 1;
+      }
+
+      &.about {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/about-bg.jpg");
+        opacity: 1;
+      }
+
+      &.profile {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/profile-bg4.jpg");
+        opacity: 1;
+      }
+
+      &.onboarding {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/dashboard-bg.jpg");
+        opacity: 1;
+      }
+
+      &.dashboard {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/dashboard-bg.jpg");
+        opacity: 1;
+      }
+
+      &.score {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/score-bg.jpg");
+        opacity: 1;
+      }
+
+      &.press {
+        background-image: url("https://cdn.havekarma.com/img/backgrounds/press-bg.jpg");
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#content-container {
+  @extend %basic-block;
+  overflow: hidden;
+  margin-top: 76px;
+  z-index: $z6c;
+
+
+}
+
+#content-container section {
+  @extend %basic-block;
+  padding: 40px 24px;
+
+  .lrg-pad {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+
+}
+
+.content-pod {
+  @extend %basic-block;
+  @extend %pod-bg;
+  @extend %pod-shadow;
+  @include round-corners($border-radius);
+  overflow: hidden;
+  @include transition(all 0.5s ease-in-out);
+
+  header,
+  .content-body,
+  footer {
+    position: relative;
+    padding: 16px 26px;
+    margin: 0;
+  }
+
+  header {
+    padding: 34px 16px;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      line-height: 1;
+      text-shadow: $heading-shadow;
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 3.0rem;
+      line-height: 1;
+      margin: 0;
+    }
+
+  }
+
+  .content-body {
+    margin: 0 auto;
+    padding: 16px 60px;
+  }
+
+
+}
+
+.content-pod.simple {
+  background: transparent;
+  border-radius: 0;
+  @include boxshadow(none);
+}
+
+.content-pod.icon-header {
+  overflow: visible;
+
+  header {
+    padding: 64px 16px 36px;
+    overflow: visible;
+
+    h2 {
+      text-shadow: $heading-shadow;
+    }
+
+    .icn-circle {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      margin-left: -33.5px;
+      padding: 16px;
+      border: 1px solid $karma-yellower;
+
+      i {
+        @include long-shadow($karma-yellower);
+      }
+    }
+  }
+}
+
+.stripes {
+  @extend %basic-block;
+  z-index: $z9a;
+  position: absolute;
+  left: 0;
+
+  .stripe {
+    width: 25%;
+    height: 4px;
+    float: left;
+  }
+
+  &.sit-top {
+    top: 0;
+  }
+
+  &.sit-bottom {
+    bottom: 0;
+  }
+
+  &.thick {
+    margin: 4px auto;
+
+    .stripe {
+      height: 8px;
+    }
+  }
+}
+
+.section-break {
+  @extend %basic-block;
+  width: 102%;
+  margin-left: -1%;
+
+  img {
+    vertical-align: bottom;
+  }
+
+  &.break-up {
+    @include rotate(180);
+  }
+}
+
+.outside-login {
+  @extend %basic-block;
+  @extend %pod-shadow;
+  @include round-corners($border-radius);
+  overflow: hidden;
+  padding: 10px 8px;
+  width: 75%;
+  margin: 0 auto 8px;
+  padding-left: 42px;
+  font-weight: 500;
+  color: $karma-white;
+  text-align: center;
+  @include transition(all 0.5s ease-in-out);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &.facebook {
+    background: $facebook-color;
+  }
+
+  &.linkedin {
+    background: $linkedin-color;
+  }
+
+  &.twitter {
+    background: $twitter-color;
+  }
+
+  &:before {
+    position: absolute;
+    height: 100%;
+    width: 36px;
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    font-family: "karma-icon-font";
+    font-weight: normal;
+    color: $karma-white;
+    position: absolute;
+    width: 36px;
+    top: 50%;
+    margin-top: 0;
+    left: 0;
+    font-size: 2.0rem;
+    text-align: center;
+    line-height: 0;
+  }
+
+  &.facebook:before {
+    content: "";
+    background: $facebook-color;
+    border-right: 1px solid darken($facebook-color, 8%);
+  }
+
+  &.linkedin:before {
+    content: "";
+    background: $linkedin-color;
+    border-right: 1px solid darken($linkedin-color, 8%);
+  }
+
+  &.twitter:before {
+    content: "";
+    background: $twitter-color;
+    border-right: 1px solid darken($twitter-color, 20%);
+  }
+
+  &.facebook:after {
+    content: "\e61e";
+  }
+
+  &.linkedin:after {
+    content: "\e62e";
+  }
+
+  &.twitter:after {
+    content: "\e63c";
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $karma-white !important;
+  }
+
+  &.facebook:hover {
+    background: darken($facebook-color, 8%);
+  }
+
+  &.linkedin:hover {
+    background: darken($linkedin-color, 8%);
+  }
+
+  &.twitter:hover {
+    background: darken($twitter-color, 10%);
+  }
+}
+
+.karma-loader {
+  @include vertical-align;
+  margin: 0 auto;
+  width: 100px;
+  padding: 20px;
+  height: auto;
+
+  .karma-logo-icon {
+    width: 100%;
+    height: auto;
+    fill: $karma-blue;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-name: change-colors;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-duration: 1000ms;
+    -moz-animation-name: change-colors;
+    -moz-animation-iteration-count: infinite;
+
+    animation-duration: 1000ms;
+    animation-name: change-colors;
+    animation-iteration-count: infinite;
+  }
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}

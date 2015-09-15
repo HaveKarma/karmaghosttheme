@@ -1,14 +1,13 @@
 {{!< default}}
 
 <header class="site-header">
+    <div class="logo-holder">
+        <a class="site-logo" title="{{@blog.title}}" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+    </div>
+    <!-- Logo -->
     <div class="container">
         {{navigation}}
-
-        {{#if @blog.logo}}
-            <a class="site-logo" title="{{@blog.title}}" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-        {{else}}
-            <h1 class="site-title"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
-        {{/if}}
+        <h1 class="site-title"><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
     </div>
 </header>
 
@@ -16,6 +15,13 @@
     <div class="container clearfix">
         {{#post}}
             <article class="{{post_class}}">
+                <div class="stripes c100 sit-top">
+                    <div class="stripe bg-karma-blue"></div>
+                    <div class="stripe bg-karma-green"></div>
+                    <div class="stripe bg-karma-yellow"></div>
+                    <div class="stripe bg-karma-orange"></div>
+                </div>
+                <!-- End Stripes -->
                 {{#if image}}
                     <div class="post-feature">
                         <img class="post-featured-image" src="{{image}}">
@@ -33,6 +39,24 @@
                 <div class="post-content js-post-content">
                     {{content}}
                 </div>
+                <div class="read-next">
+                    {{#next_post}}
+                    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                        <section class="post">
+                            <h2>{{title}}</h2>
+                            <p>{{excerpt words="19"}}&hellip;</p>
+                        </section>
+                    </a>
+                    {{/next_post}}
+                    {{#prev_post}}
+                    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                        <section class="post">
+                            <h2>{{title}}</h2>
+                            <p>{{excerpt words="19"}}&hellip;</p>
+                        </section>
+                    </a>
+                    {{/prev_post}}
+                </div>
 
                 <!-- <footer class="post-stub-footer">
 
@@ -44,6 +68,13 @@
             </article>
 
             <div class="sidebar">
+                <div class="stripes c100 sit-top">
+                    <div class="stripe bg-karma-blue"></div>
+                    <div class="stripe bg-karma-green"></div>
+                    <div class="stripe bg-karma-yellow"></div>
+                    <div class="stripe bg-karma-orange"></div>
+                </div>
+                <!-- End Stripes -->
                 <aside class="widget widget-author">
                     <header class="widget-author-header">
                         <img class="widget-author-avatar" src="{{author.image}}" alt="{{author.name}}" />
@@ -56,6 +87,32 @@
                     <div class="widget-content">
                         <p>{{author.bio}}</p>
                     </div>
+                </aside>
+
+                <aside class="widget sign-up-form">
+                    <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; padding: 12px 16px; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//havekarma.us3.list-manage.com/subscribe/post?u=c44afc82425112f7e12122c5d&amp;id=3892eb5a1f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Get some good Karma in your inbox.
+<br>
+<small style="color:#999; font-weight: 400;">Subscribe to our newsletter and get Karma related news and happenings once a month.</small>
+    </label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_c44afc82425112f7e12122c5d_3892eb5a1f" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
                 </aside>
 
                 <!-- <aside class="widget">

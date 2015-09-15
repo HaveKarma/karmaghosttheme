@@ -1,0 +1,594 @@
+/******************************************************************
+Site Name: havekarma.com
+Author: Karma Labs, Inc.
+
+Stylesheet: Structure Stylesheet
+******************************************************************/
+
+
+*, *:before, *:after {
+	box-sizing: inherit;
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+/*********************
+Columns
+*********************/
+
+.c100, .c90, .c80, c70, .c75, c60, .c50, ,c40, .c33, .c30, .c25, .c20, .c16, .c10 {
+	margin: 0 auto;
+}
+
+.c100 {
+	width: 100%;
+}
+
+.c90 {
+	width: 90%;
+
+	@include fit-to(medium-screens) {
+		width: 100%;
+	}
+}
+
+.c80 {
+	width: 80%;
+
+	@include fit-to(large-screens) {
+		width: 90%;
+	}
+
+	@include fit-to(small-screens) {
+		width: 100%;
+	}
+}
+
+.c75 {
+	width: 75%;
+
+	@include fit-to(medium-screens) {
+		width: 90%;
+	}
+
+	@include fit-to(small-screens) {
+		width: 100%;
+	}
+}
+
+.c70 {
+	width: 70%;
+
+	@include fit-to(medium-screens) {
+		width: 90%;
+	}
+
+	@include fit-to(small-screens) {
+		width: 100%;
+	}
+}
+
+.c60 {
+	width: 60%;
+	// massive-screens  wide-screens  large-screens  medium-screens  small-screens
+	@include fit-to(medium￼-screens) {
+		width: 50%;
+	}
+	@include fit-to(small-screens) {
+		width: 100%;
+	}
+}
+
+.c50 {
+	width: 50%;
+
+	&.left {
+		padding: 0 4px;
+	}
+
+	&.right {
+		padding: 0 4px 0 40px;
+	}
+
+	@include fit-to(medium-screens) {
+		width: 100%;
+
+		&.right {
+			padding-left: 4px;
+			padding-top: 26px;
+		}
+
+		&.break-late {
+			width: 50%;
+			padding-left: 40px;
+			padding-top: 0;
+		}
+	}
+
+	@include fit-to(small-screens) {
+		&.break-late {
+			width: 100%;
+			padding-left: 4px;
+			padding-top: 26px;
+		}
+	}
+}
+
+.c40 {
+	width: 40%;
+
+	@include fit-to(medium￼-screens) {
+		width: 50%;
+	}
+	@include fit-to(small-screens) {
+		width: 100%;
+	}
+}
+
+.c33 {
+	width: 33.333333%;
+
+
+	@include fit-to(small-screens) {
+		width: 50%;
+	}
+
+	@include fit-to(tiny-screens) {
+		width: 100%;
+	}
+
+}
+
+.c30 {
+	width: 30%;
+
+	@include fit-to(medium-screens) {
+		width: 10%;
+	}
+
+	@include fit-to(small-screens) {
+		width: 50%;
+	}
+
+	@include fit-to(tiny-screens) {
+		width: 100%;
+	}
+}
+
+.c25 {
+	width: 25%;
+
+	@include fit-to(medium-screens) {
+		width: 10%;
+	}
+
+	@include fit-to(small-screens) {
+		width: 50%;
+	}
+
+	@include fit-to(tiny-screens) {
+		width: 100%;
+	}
+}
+
+.c20 {
+	width: 20%;
+
+	@include fit-to(large-screens) {
+		width: 30%;
+	}
+
+	@include fit-to(small-screens) {
+		width: 50%;
+	}
+
+	@include fit-to(teeny-tiny-screens) {
+		width: 100%;
+	}
+}
+
+.c16 {
+	width: 16.666666667%;
+}
+
+.c10 {
+	width: 10%;
+
+	@include fit-to(small-screens) {
+		width: 20%;
+	}
+}
+
+
+
+/*********************
+Display Settings
+*********************/
+.inline {
+	display: inline !important;
+	font-size: 1.6rem;
+	white-space: normal;
+	word-spacing: 0;
+}
+
+.inline-block {
+	@extend %inline-block;
+}
+
+.block {
+	display: block !important;
+}
+
+.table {
+	display: table !important;
+}
+
+.inline-parent {
+	@extend %inline-parent;
+}
+
+.hide-display {
+	display: none !important;
+}
+
+.hide-opacity {
+	opacity: 0 !important;
+}
+
+.hide-visibility {
+	visibility: hidden !important;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.fn {
+	float: none !important;
+}
+
+
+/*********************
+Position Settings
+*********************/
+
+.pos-a {
+	position: absolute !important;
+	top: 0;
+	bottom: auto;
+	left: 0;
+	right: auto;
+}
+
+.pos-r {
+	position: relative !important;
+}
+
+.pos-f {
+	position: fixed !important;
+}
+
+
+/*********************
+Misc.
+*********************/
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	@extend %basic-block;
+	margin: 4px 0;
+	height: 1px;
+	background: transparent;
+	clear: both;
+	border: none;
+	border-top: 1px solid transparent;
+
+	&.dashed {
+		border-top-style: dashed;
+	}
+
+	&.dotted {
+		border-top-style: dotted;
+	}
+
+	&.blue-hr {
+		border-top-color: $karma-blue;
+
+	}
+
+	&.yellow-hr {
+		border-top-color: $karma-yellow;
+	}
+
+	&.orange-hr {
+		border-top-color: $karma-orange;
+	}
+
+	&.green-hr {
+		border-top-color: $karma-green;
+	}
+
+	&.red-hr {
+		border-top-color: $karma-red;
+	}
+
+	&.grey1-hr {
+		border-top-color: $karma-grey1;
+	}
+
+	&.grey2-hr {
+		border-top-color: $karma-grey2;
+	}
+
+	&.grey3-hr {
+		border-top-color: $karma-grey3;
+	}
+
+	&.black-hr {
+		border-top-color: $karma-black;
+	}
+}
+
+img, svg {
+	width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+img.smaller-image {
+	width: 85%;
+}
+
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.ma {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.mt4 {
+	margin-top: 4px;
+}
+
+.mt8 {
+	margin-top: 8px;
+}
+
+.mt12 {
+	margin-top: 12px;
+}
+
+.mt16 {
+		margin-top: 16px !important;
+	}
+
+.mt20 {
+	margin-top: 20px !important;
+}
+
+.mt24 {
+		margin-top: 24px !important;
+	}
+
+.mt28 {
+	margin-top: 28px !important;
+}
+
+.mt32 {
+		margin-top: 32px !important;
+	}
+
+	.mt36 {
+			margin-top: 36px !important;
+		}
+
+		.mt40 {
+				margin-top: 40px !important;
+			}
+
+.mb4 {
+	margin-bottom: 4px !important;
+}
+
+.mb8 {
+		margin-bottom: 8px !important;
+	}
+
+.mb16 {
+		margin-bottom: 16px !important;
+	}
+
+.mb24 {
+		margin-bottom: 24px !important;
+	}
+
+.mb32 {
+		margin-bottom: 32px !important;
+	}
+
+	.mb36 {
+			margin-bottom: 36px !important;
+		}
+
+		.mb40 {
+				margin-bottom: 40px !important;
+			}
+
+.vt {
+	vertical-align: top;
+}
+
+.vb {
+	vertical-align: bottom;
+}
+
+.vm {
+	vertical-align: middle;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+
+/*********************
+Clearfix & Breaks
+*********************/
+
+.clearfix {
+	zoom: 1;
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.full-break {
+	position: relative;
+	display: block;
+	clear: both;
+	width: 100%;
+	height: 1px;
+	background: transparent !important;
+	zoom: 1;
+
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+
+////---- Icons
+
+.icn-circle, .icn-square {
+	@extend %basic-block;
+	overflow: hidden;
+	display: inline-block;
+	text-align: center;
+	@extend %pod-shadow;
+}
+
+.icn-circle {
+	border-radius: 50%;
+	font-size: 5.4rem;
+}
+
+.icn-square {
+	@include round-corners($border-radius);
+	line-height: 0 !important;
+	padding: 6px 8px;
+
+}
+
+////---- Grads
+
+.white-grad {
+	@include css-gradient($karma-white, $karma-grey1);
+}
+
+.blue-grad {
+	@include css-gradient($karma-blue, $karma-bluer);
+}
+
+.red-grad {
+	@include css-gradient($karma-red, $karma-reder);
+}
+
+.yellow-grad {
+	@include css-gradient($karma-yellow, $karma-yellower);
+}
+
+.green-grad {
+	@include css-gradient($karma-green, $karma-greener);
+}
+
+.black-grad {
+	@include css-gradient($karma-grey5, $karma-black);
+}
+
+.tooltip {
+	@include transform(translateY(-10px));
+	@include boxshadow(0 0 2px 0 rgba(0,0,0,.25), 0 1px 4px 1px rgba(0,0,0,.15));
+	@include round-corners($border-radius);
+	@include css-gradient($karma-white, $karma-grey1);
+	position: absolute;
+	top: -70px;
+	left: 50%;
+	z-index: 10;
+	display: block;
+	visibility: hidden;
+	margin-left: -110px;
+	width: 220px;
+	height: 60px;
+	opacity: 0;
+	@include transition(all 0.5s ease-in-out);
+
+	p {
+		padding: 2px 12px 0;
+		text-align: left;
+		font-weight: 400;
+		line-height: 110%;
+		font-size: 1.4rem;
+	}
+
+	.tip-button {
+		height: 30px;
+		border-top: 1px solid $karma-grey1;
+		font-size: 1.4rem;
+		font-weight: 500;
+		padding: 4px 0 0 0;
+		@include transition(all 0.5s ease-in-out);
+
+		&.site-link {
+			border-top: none;
+		}
+
+		&:hover {
+			cursor: pointer;
+			background: $karma-grey1;
+		}
+	}
+
+	&:before {
+		@include transition(all 0.5s ease-in-out);
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		display: block;
+		margin-left: -8px;
+		width: 0;
+		height: 0;
+		border: 8px solid $karma-grey1;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+		background: transparent;
+		content: '';
+	}
+}
+
+.boxed-content {
+	@extend %boxed-content;
+}
