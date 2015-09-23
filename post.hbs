@@ -44,7 +44,7 @@
                     <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
                         <section class="post">
                             <h2>{{title}}</h2>
-                            <p>{{excerpt words="19"}}&hellip;</p>
+                        <!--    <p>{{excerpt words="19"}}&hellip;</p> -->
                         </section>
                     </a>
                     {{/next_post}}
@@ -52,19 +52,31 @@
                     <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
                         <section class="post">
                             <h2>{{title}}</h2>
-                            <p>{{excerpt words="19"}}&hellip;</p>
+                            <!--    <p>{{excerpt words="19"}}&hellip;</p> -->
                         </section>
                     </a>
                     {{/prev_post}}
                 </div>
 
-                <!-- <footer class="post-stub-footer">
+                <footer class="post-stub-footer">
 
                     {{! ################################################### }}
-                    {{! Add your Disqus comments code here }}
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+   /* * * CONFIGURATION VARIABLES * * */
+   var disqus_shortname = 'havekarma';
+
+   /* * * DON'T EDIT BELOW THIS LINE * * */
+   (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
                     {{! ################################################### }}
 
-                </footer> -->
+                </footer>
             </article>
 
             <div class="sidebar">
@@ -113,6 +125,11 @@
 </div>
 
 <!--End mc_embed_signup-->
+                </aside>
+
+                <aside class="instagram">
+                    <strong>Keep up with Karma on Instagram</strong>
+                    <!-- INSTANSIVE WIDGET --><script src="//instansive.com/widget/js/instansive.js"></script><iframe src="//instansive.com/widgets/9ae37d21234000b4a014dba40e0d53622a11b22d.html" id="instansive_9ae37d2123" name="instansive_9ae37d2123"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; overflow: hidden;"></iframe>
                 </aside>
 
                 <!-- <aside class="widget">

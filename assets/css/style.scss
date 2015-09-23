@@ -121,8 +121,11 @@ Stylesheet: Karma Fonts
 
 body {
     font-family: "ProximaNova", sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     color: $karma-grey5;
+    -webkit-font-smoothing: antialiased;
+	font-smooth: always;
+	text-rendering: optimizelegibility;
 }
 
 h1,
@@ -687,9 +690,16 @@ p code {
 .read-next {
     display: block;
     width: 100%;
-    margin: 40px 0 0;
+    margin: 0;
     padding: 0;
 
+    h2 {
+        font-size: 22px;
+    }
+
+&:first-of-type {
+    margin: 40px 0 0;
+}
 
     .post-feature {
         display: none;
@@ -737,7 +747,7 @@ p code {
     display: block;
     width: 100%;
     margin: 0;
-    padding: 40px 26px;
+    padding: 20px 26px 12px;
     border-bottom: none;
     border-right: none;
     border-left: none;
@@ -869,6 +879,22 @@ p code {
     margin: 0 1.5%;
     width: 30.333%;
     position: relative;
+}
+
+aside.instagram {
+    padding: 16px 22px;
+
+    strong {
+        @extend %basic-block;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    iframe {
+        border: 1px solid $karma-grey1;
+        padding: 4px;
+
+    }
 }
 
 .widget {
@@ -1157,6 +1183,17 @@ p code {
         padding: 60px 0;
     }
 
+    .site-title {
+        font-size: 22px;
+    }
+
+    .logo-holder {
+    width: 120px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
     .site-nav {
         margin-top: -30px;
         margin-bottom: 36px;
@@ -1165,6 +1202,13 @@ p code {
     .content-primary {
         padding: 50px 0;
     }
+
+    .post-content {
+    padding: 0 20px 35px;
+}
+.post-header {
+    padding: 37px 20px 0;
+}
 
     .container {
         padding: 0 20px;
